@@ -88,6 +88,39 @@ const data = [
   }
 ];
 
+function createComponent(title, date, firstP, secondP, thirdP) {
+  //create
+  const article = document.createElement("div");
+  const newTitle = document.createElement("h2");
+  const newDate = document.createElement("p");
+  const newFirstP = document.createElement("p");
+  const newSecondP = document.createElement("p");
+  const newThirdP = document.createElement("p");
+  const newExpButton = document.createElement("span");
+  //structure
+  article.appendChild.add(newTitle);
+  article.appendChild.add(newDate);
+  article.appendChild.add(newFirstP);
+  article.appendChild.add(newSecondP);
+  article.appendChild.add(newThirdP);
+  article.appendChild.add(newExpButton);
+  //classes
+  article.classList.add("article");
+  title.classList.add("date");
+  expButton.classList.add("expandButton");
+  //populate
+  newTitle.textContent = date;
+  newFirstP.textContent = firstP;
+  newSecondP.textContent = secondP;
+  newThirdP.textContent = thirdP;
+  //event listener for span
+  newExpButton.addEventListener("click", () => {
+    article.classList.toggle("article-open")
+  });
+  //return component
+  return article;
+};
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
