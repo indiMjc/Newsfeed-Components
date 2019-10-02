@@ -88,26 +88,28 @@ const data = [
   }
 ];
 
+const articles = document.querySelector(".articles");
+
 function createComponent(title, date, firstP, secondP, thirdP) {
   //create
-  const article = document.createElement("div");
-  const newTitle = document.createElement("h2");
-  const newDate = document.createElement("p");
-  const newFirstP = document.createElement("p");
-  const newSecondP = document.createElement("p");
-  const newThirdP = document.createElement("p");
-  const newExpButton = document.createElement("span");
+  let article = document.createElement("div");
+  let newTitle = document.createElement("h2");
+  let newDate = document.createElement("p");
+  let newFirstP = document.createElement("p");
+  let newSecondP = document.createElement("p");
+  let newThirdP = document.createElement("p");
+  let newExpButton = document.createElement("span");
   //structure
-  article.appendChild.add(newTitle);
-  article.appendChild.add(newDate);
-  article.appendChild.add(newFirstP);
-  article.appendChild.add(newSecondP);
-  article.appendChild.add(newThirdP);
-  article.appendChild.add(newExpButton);
+  article.appendChild(newTitle);
+  article.appendChild(newDate);
+  article.appendChild(newFirstP);
+  article.appendChild(newSecondP);
+  article.appendChild(newThirdP);
+  article.appendChild(newExpButton);
   //classes
   article.classList.add("article");
-  title.classList.add("date");
-  expButton.classList.add("expandButton");
+  newTitle.classList.add("date");
+  newExpButton.classList.add("expandButton");
   //populate
   newTitle.textContent = date;
   newFirstP.textContent = firstP;
@@ -120,6 +122,10 @@ function createComponent(title, date, firstP, secondP, thirdP) {
   //return component
   return article;
 };
+
+data.forEach(info => {
+  articles.appendChild(createComponent(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph));
+});
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
