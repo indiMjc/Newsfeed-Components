@@ -12,11 +12,8 @@ let menuItems = [
 const headerDiv = document.querySelector(".header");
 const menuBtn = document.querySelector(".menu-button");
 
-menuBtn.appendChild(menuMaker(menuItems));
+headerDiv.appendChild(menuMaker(menuItems));
 
-menuBtn.addEventListener("click", () => {
-  menuBtn.classList.toggle("menu--open");
-});
 
 function menuMaker (array) {
   //create
@@ -33,6 +30,9 @@ function menuMaker (array) {
     unordered.appendChild(listEle);
     listEle.textContent = array[i];
   }
+  menuBtn.addEventListener("click", () => {
+    menuDiv.classList.toggle("menu--open");
+  });
   return menuDiv;
 };
 
