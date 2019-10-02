@@ -9,6 +9,38 @@ let menuItems = [
   'Log Out'
 ];
 
+const headerDiv = document.querySelector(".header");
+const menuBtn = document.querySelector(".menu-button");
+
+headerDiv.appendChild(menuMaker(menuItems));
+
+
+function menuMaker (array) {
+  //create
+  let menuDiv = document.createElement("div");
+  let unordered = document.createElement("ul");
+  //structure
+  menuBtn.appendChild(menuDiv);
+  menuDiv.appendChild(unordered);
+  //class
+  menuDiv.classList.add("menu");
+  // loop over array
+  for (i = 0; i < array.length; i++) {
+    let listEle = document.createElement("li");
+    unordered.appendChild(listEle);
+    listEle.textContent = array[i];
+  }
+  menuBtn.addEventListener("click", () => {
+    menuDiv.classList.toggle("menu--open");
+  });
+  return menuDiv;
+};
+
+
+
+
+
+
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
@@ -33,3 +65,35 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+// let listEleOne = document.createElement("li");
+// let listEleTwo = document.createElement("li");
+// let listEleThree = document.createElement("li");
+// let listEleFour = document.createElement("li");
+// let listEleFive = document.createElement("li");
+// let listEleSix = document.createElement("li");
+
+// unordered.appendChild(listEleOne);
+//   unordered.appendChild(listEleTwo);
+//   unordered.appendChild(listEleThree);
+//   unordered.appendChild(listEleFour);
+//   unordered.appendChild(listEleFive);
+//   unordered.appendChild(listEleSix);
+//   //classes
+//   menuDiv.classList.add("menu");
+//   //populate
+//   array.forEach(list, i => {
+//     unordered.appendChild[i](list);
+//   });
+
+// function listMaker (array) {
+//   let listEleOne = document.createElement("li");
+//   let listEleTwo = document.createElement("li");
+//   let listEleThree = document.createElement("li");
+//   let listEleFour = document.createElement("li");
+//   let listEleFive = document.createElement("li");
+//   let listEleSix = document.createElement("li");
+// }
+
+// menuMaker(menuItems);
